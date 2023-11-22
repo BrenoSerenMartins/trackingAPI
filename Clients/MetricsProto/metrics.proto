@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package metrics;
+
+service MetricsService {
+  rpc SaveLocationMetrics(LocationMetricsRequest) returns (LocationMetricsResponse);
+}
+
+message LocationMetricsRequest {
+  string device_id = 1;
+  string brand = 2;
+  float distance = 3;
+}
+
+message LocationMetricsResponse {
+  bool success = 1;
+}
